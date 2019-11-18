@@ -30,9 +30,19 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  addItems.addEventListener('submit', addItem);
+
+  function addItem(e) {
+    e.preventDefault(); // page reloads by default on a form submit
+    const text = (this.querySelector('name[item]')).value; //this refers to form tag that was selected before function call
+    const item = {
+      text, // ES6 shorthand
+      done: false
+    };
+    this.reset();
+  }
 </script>
 
 
 </body>
 </html>
-
